@@ -50,7 +50,7 @@ class android::sdk {
     {
       exec { 
         'add-i386': 
-          command => '/usr/bin/dpkg --add-architecture i386', 
+          command => '/usr/bin/dpkg --add-architecture i386; aptitude update', 
           unless  => '/usr/bin/dpkg --print-foreign-architectures | 
 /bin/grep i386' 
       }
